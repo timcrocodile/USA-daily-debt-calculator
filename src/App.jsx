@@ -7,8 +7,6 @@ import Previous3 from "./previous3";
 import PreviousFirst from "./PreviousFirst";
 import React from "react";
 
-import "./VirgilFont.css";
-
 function App() {
   const [debtHeld, setDebtHeld] = useState(null);
   const [debtHeld2, setDebtHeld2] = useState(null);
