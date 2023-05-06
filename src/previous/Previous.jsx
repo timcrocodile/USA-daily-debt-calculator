@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
-import styles from "./hamburgerMenu.module.css";
-import Operations from "../operations";
+import "./hamburgerMenu.css";
 
 const Previous = ({ onDebtHeld2 }) => {
   const [debt, setDebt] = useState(null);
@@ -18,9 +17,6 @@ const Previous = ({ onDebtHeld2 }) => {
     const url = `https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?filter=record_date:eq:${date}`;
     const fetchData = async () => {
       try {
-        // const response = await fetch(
-        //   "https://api.fiscaldata.treasury.gov/services/api/fiscal_service/v2/accounting/od/debt_to_penny?filter=record_date:eq:2023-05-01"
-        // );
         const response = await fetch(url);
         const result = await response.json();
         setDebt(result);
@@ -56,7 +52,6 @@ const Previous = ({ onDebtHeld2 }) => {
   }
 
   const debtHeld2 = debt.data[0].tot_pub_debt_out_amt;
-  // onDebtHeld2(debtHeld2);
 
   return (
     <div>
@@ -64,8 +59,6 @@ const Previous = ({ onDebtHeld2 }) => {
         Total USA Debt Outstanding amount as of
         {debt.data[0].record_date} : ${debtHeld2}
       </p>
-      <Operations debtHeld2={debtHeld2} />
-      {/* <span className={styles.hamburger}></span> */}
     </div>
   );
 };
