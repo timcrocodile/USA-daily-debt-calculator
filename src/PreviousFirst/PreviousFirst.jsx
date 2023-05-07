@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import "./index.css";
 
 const PreviousFirst = ({ onDebtHeld }) => {
   const [debt, setDebt] = useState(null);
@@ -50,7 +51,7 @@ const PreviousFirst = ({ onDebtHeld }) => {
         : today.getMonth() + 1;
     const day = today.getDate() < 10 ? `0${today.getDate()}` : today.getDate();
     const date = `${year}-${month}-${day}`;
-    return <p> No data was released on {date} </p>;
+    return <p className="nodata"> No data was released on {date} </p>;
   }
 
   const debtHeld = debt.data[0].tot_pub_debt_out_amt;
