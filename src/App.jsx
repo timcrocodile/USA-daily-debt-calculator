@@ -73,7 +73,7 @@ function App() {
       Math.abs(difference)
     )}`;
   } else {
-    differenceText = "Il debito è rimasto invariato rispetto a ieri.";
+    differenceText = "";
   }
 
   const [showMessage, setShowMessage] = useState(false);

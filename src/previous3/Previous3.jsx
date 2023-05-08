@@ -45,7 +45,7 @@ const Previous = ({ onDebtHeld4 }) => {
         : today.getMonth() + 1;
     const day = today.getDate() < 10 ? `0${today.getDate()}` : today.getDate();
     const date = `${year}-${month}-${day}`;
-    return <p> No data was released on{date} </p>;
+    return <p className="debt"> No data was released on{date} </p>;
   }
 
   const debtHeld4 = debt.data[0].tot_pub_debt_out_amt;
