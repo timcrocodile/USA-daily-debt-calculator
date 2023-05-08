@@ -6,12 +6,14 @@ import Previous2 from "./previous2";
 import Previous3 from "./previous3";
 import PreviousFirst from "./PreviousFirst";
 import React from "react";
+import Previous4 from "./previous4";
 
 function App() {
   const [debtHeld, setDebtHeld] = useState(null);
   const [debtHeld2, setDebtHeld2] = useState(null);
   const [debtHeld3, setDebtHeld3] = useState(null);
   const [debtHeld4, setDebtHeld4] = useState(null);
+  const [debtHeld5, setDebtHeld5] = useState(null);
 
   const handleDebtHeld = (value) => {
     setDebtHeld(value);
@@ -27,6 +29,9 @@ function App() {
 
   const handleDebtHeld4 = (value) => {
     setDebtHeld4(value);
+  };
+  const handleDebtHeld5 = (value) => {
+    setDebtHeld5(value);
   };
 
   function numberWithWords(number) {
@@ -54,13 +59,15 @@ function App() {
   }
 
   let difference;
-  let debtToSubtract = debtHeld2 ?? debtHeld3 ?? debtHeld4;
+  let debtToSubtract = debtHeld2 ?? debtHeld3 ?? debtHeld4 ?? debtHeld5;
   if (debtHeld) {
     difference = debtHeld - debtToSubtract;
   } else if (debtHeld2) {
-    difference = debtHeld2 - (debtHeld3 ?? debtHeld4);
+    difference = debtHeld2 - (debtHeld3 ?? debtHeld4 ?? debtHeld5);
   } else if (debtHeld3) {
-    difference = debtHeld3 - debtHeld4;
+    difference = debtHeld3 - (debtHeld4 ?? debtHeld5);
+  } else if (debtHeld4) {
+    difference = debtHeld4 - debtHeld5;
   }
 
   let differenceText = "";
@@ -106,6 +113,7 @@ function App() {
         <Previous onDebtHeld2={handleDebtHeld2} />
         <Previous2 onDebtHeld3={handleDebtHeld3} />
         <Previous3 onDebtHeld4={handleDebtHeld4} />
+        <Previous4 onDebtHeld5={handleDebtHeld5} />
       </div>
     </>
   );
