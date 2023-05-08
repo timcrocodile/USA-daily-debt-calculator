@@ -13,6 +13,7 @@ body {
   border-radius: 5px;
   position: relative;
   cursor: pointer;
+  box-shadow: 5px 10px #c3c3c3;
   padding: 3px;
   transition: 0.3s;
 }
