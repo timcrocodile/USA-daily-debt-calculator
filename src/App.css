@@ -14,6 +14,11 @@
   background-color: white;
   box-shadow: 5px 10px #00c30d;
 }
+.totalcontainer {
+  display: flex;
+  justify-content: space-between;
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -33,6 +38,10 @@ body {
 
 .video {
   z-index: -4;
+}
+
+.superman {
+  display: none;
 }
 
 .differencetext {
@@ -58,8 +67,22 @@ body {
     position: absolute;
     /* top: 50%;
     left: 50%; */
-    margin-top: 500px;
+    margin-top: 400px;
     background-color: white;
     box-shadow: 5px 10px #888888;
+  }
+
+  .samurai {
+    display: none;
+  }
+
+  .king {
+    display: none;
+  }
+
+  .superman {
+    display: inline-block;
+
+    z-index: 3;
   }
 }
