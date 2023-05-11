@@ -114,7 +114,7 @@ function App() {
           <Previous onDebtHeld2={handleDebtHeld2} />
           <Previous2 onDebtHeld3={handleDebtHeld3} />
           <Previous3 onDebtHeld4={handleDebtHeld4} />
-          {/* <Previous4 onDebtHeld5={handleDebtHeld5} /> */}
+          <Previous4 onDebtHeld5={handleDebtHeld5} />
         </div>
         <img
           className="king"

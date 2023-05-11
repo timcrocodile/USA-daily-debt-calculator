@@ -26,7 +26,7 @@ const Previous = ({ onDebtHeld4 }) => {
   }, []);
 
   useEffect(() => {
-    if (debt) {
+    if (debt && debt.data && debt.data.length > 0) {
       const debtHeld4 = debt.data[0].tot_pub_debt_out_amt;
       onDebtHeld4(debtHeld4);
     }
